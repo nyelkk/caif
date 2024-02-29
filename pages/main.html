@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CAIF - Calculadora Acadêmica do IFAL</title>
+    </head>
+<body>
+    <h1 id="mensagem"></h1>
+    <h2>Matérias 912 A</h2>
+
+    <div id="disciplinas">
+        <p>BANCO DE DADOS:</p>
+        <input type="number" id="bdNota1" placeholder="Nota 1º Bimestre">
+        <input type="number" id="bdNota2" placeholder="Nota 2º Bimestre">
+        <input type="number" id="bdRecuperacao" placeholder="Nota Recuperação">
+
+        <p>BIOLOGIA:</p>
+        <input type="number" id="bioNota1" placeholder="Nota 1º Bimestre">
+        <input type="number" id="bioNota2" placeholder="Nota 2º Bimestre">
+        <input type="number" id="bioRecuperacao" placeholder="Nota Recuperação">
+
+        <p>EDUCAÇÃO FISICA:</p>
+        <input type="number" id="bioNota1" placeholder="Nota 1º Bimestre">
+        <input type="number" id="bioNota2" placeholder="Nota 2º Bimestre">
+        <input type="number" id="bioRecuperacao" placeholder="Nota Recuperação">
+
+        <p>FILOSOFIA:</p>
+        <input type="number" id="bioNota1" placeholder="Nota 1º Bimestre">
+        <input type="number" id="bioNota2" placeholder="Nota 2º Bimestre">
+        <input type="number" id="bioRecuperacao" placeholder="Nota Recuperação">
+        
+        <p>FISICA:</p>
+        <input type="number" id="bioNota1" placeholder="Nota 1º Bimestre">
+        <input type="number" id="bioNota2" placeholder="Nota 2º Bimestre">
+        <input type="number" id="bioRecuperacao" placeholder="Nota Recuperação">
+
+        <p>FSOR:</p>
+        <input type="number" id="bioNota1" placeholder="Nota 1º Bimestre">
+        <input type="number" id="bioNota2" placeholder="Nota 2º Bimestre">
+        <input type="number" id="bioRecuperacao" placeholder="Nota Recuperação">
+
+        <p>GEOGRAFIA:</p>
+        <input type="number" id="bioNota1" placeholder="Nota 1º Bimestre">
+        <input type="number" id="bioNota2" placeholder="Nota 2º Bimestre">
+        <input type="number" id="bioRecuperacao" placeholder="Nota Recuperação">
+
+        <p>HISTÓRIA:</p>
+        <input type="number" id="bioNota1" placeholder="Nota 1º Bimestre">
+        <input type="number" id="bioNota2" placeholder="Nota 2º Bimestre">
+        <input type="number" id="bioRecuperacao" placeholder="Nota Recuperação">
+
+        <p>INGLES:</p>
+        <input type="number" id="bioNota1" placeholder="Nota 1º Bimestre">
+        <input type="number" id="bioNota2" placeholder="Nota 2º Bimestre">
+        <input type="number" id="bioRecuperacao" placeholder="Nota Recuperação">
+
+        <p>PORTUGUÊS:</p>
+        <input type="number" id="bioNota1" placeholder="Nota 1º Bimestre">
+        <input type="number" id="bioNota2" placeholder="Nota 2º Bimestre">
+        <input type="number" id="bioRecuperacao" placeholder="Nota Recuperação">
+
+        <p>MATEMÁTICA:</p>
+        <input type="number" id="bioNota1" placeholder="Nota 1º Bimestre">
+        <input type="number" id="bioNota2" placeholder="Nota 2º Bimestre">
+        <input type="number" id="bioRecuperacao" placeholder="Nota Recuperação">
+
+        <p>POO:</p>
+        <input type="number" id="bioNota1" placeholder="Nota 1º Bimestre">
+        <input type="number" id="bioNota2" placeholder="Nota 2º Bimestre">
+        <input type="number" id="bioRecuperacao" placeholder="Nota Recuperação">
+
+        <p>PWEB:</p>
+        <input type="number" id="bioNota1" placeholder="Nota 1º Bimestre">
+        <input type="number" id="bioNota2" placeholder="Nota 2º Bimestre">
+        <input type="number" id="bioRecuperacao" placeholder="Nota Recuperação">
+
+        <p>QUIMICA:</p>
+        <input type="number" id="bioNota1" placeholder="Nota 1º Bimestre">
+        <input type="number" id="bioNota2" placeholder="Nota 2º Bimestre">
+        <input type="number" id="bioRecuperacao" placeholder="Nota Recuperação">
+
+        <p>SOCIOLOGIA:</p>
+        <input type="number" id="bioNota1" placeholder="Nota 1º Bimestre">
+        <input type="number" id="bioNota2" placeholder="Nota 2º Bimestre">
+        <input type="number" id="bioRecuperacao" placeholder="Nota Recuperação">
+
+    </div>
+
+    <button onclick="calcularMedias()">Calcular Médias</button>
+
+    <div id="resultados"></div>
+
+    <script>
+        function obterNomeDaUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('nome');
+}
+
+
+const nome = obterNomeDaUrl();
+document.getElementById("mensagem").innerText = `Bem vindo(a), ${nome}!`;
+
+function calcularMedia(nota1, nota2, recuperacao) {
+    if (recuperacao !== "") {
+        return Math.max((nota1 + nota2) / 2, recuperacao);
+    } else {
+        return (nota1 + nota2) / 2;
+    }
+}
+
+function calcularMedias() {
+    const disciplinas = [
+        { nome: "BANCO DE DADOS", nota1: parseFloat(document.getElementById("bdNota1").value), nota2: parseFloat(document.getElementById("bdNota2").value), recuperacao: parseFloat(document.getElementById("bdRecuperacao").value) },
+        { nome: "BIOLOGIA", nota1: parseFloat(document.getElementById("bioNota1").value), nota2: parseFloat(document.getElementById("bioNota2").value), recuperacao: parseFloat(document.getElementById("bioRecuperacao").value) },
+        { nome: "ED FISICA", nota1: parseFloat(document.getElementById("bioNota1").value), nota2: parseFloat(document.getElementById("bioNota2").value), recuperacao: parseFloat(document.getElementById("bioRecuperacao").value) },
+        { nome: "FILOSIFA", nota1: parseFloat(document.getElementById("bioNota1").value), nota2: parseFloat(document.getElementById("bioNota2").value), recuperacao: parseFloat(document.getElementById("bioRecuperacao").value) },
+        { nome: "FISICA", nota1: parseFloat(document.getElementById("bioNota1").value), nota2: parseFloat(document.getElementById("bioNota2").value), recuperacao: parseFloat(document.getElementById("bioRecuperacao").value) },
+        { nome: "FSOR", nota1: parseFloat(document.getElementById("bioNota1").value), nota2: parseFloat(document.getElementById("bioNota2").value), recuperacao: parseFloat(document.getElementById("bioRecuperacao").value) },
+        { nome: "GEOGRAFIA", nota1: parseFloat(document.getElementById("bioNota1").value), nota2: parseFloat(document.getElementById("bioNota2").value), recuperacao: parseFloat(document.getElementById("bioRecuperacao").value) },
+        { nome: "HISTORIA", nota1: parseFloat(document.getElementById("bioNota1").value), nota2: parseFloat(document.getElementById("bioNota2").value), recuperacao: parseFloat(document.getElementById("bioRecuperacao").value) },
+        { nome: "INGLES", nota1: parseFloat(document.getElementById("bioNota1").value), nota2: parseFloat(document.getElementById("bioNota2").value), recuperacao: parseFloat(document.getElementById("bioRecuperacao").value) },
+        { nome: "PORTUGUES", nota1: parseFloat(document.getElementById("bioNota1").value), nota2: parseFloat(document.getElementById("bioNota2").value), recuperacao: parseFloat(document.getElementById("bioRecuperacao").value) },
+        { nome: "MATEMATICA", nota1: parseFloat(document.getElementById("bioNota1").value), nota2: parseFloat(document.getElementById("bioNota2").value), recuperacao: parseFloat(document.getElementById("bioRecuperacao").value) },
+        { nome: "POO", nota1: parseFloat(document.getElementById("bioNota1").value), nota2: parseFloat(document.getElementById("bioNota2").value), recuperacao: parseFloat(document.getElementById("bioRecuperacao").value) },
+        { nome: "PWEB", nota1: parseFloat(document.getElementById("bioNota1").value), nota2: parseFloat(document.getElementById("bioNota2").value), recuperacao: parseFloat(document.getElementById("bioRecuperacao").value) },
+        { nome: "QUIMICA", nota1: parseFloat(document.getElementById("bioNota1").value), nota2: parseFloat(document.getElementById("bioNota2").value), recuperacao: parseFloat(document.getElementById("bioRecuperacao").value) },
+        { nome: "SOCIOLOIGA", nota1: parseFloat(document.getElementById("bioNota1").value), nota2: parseFloat(document.getElementById("bioNota2").value), recuperacao: parseFloat(document.getElementById("bioRecuperacao").value) }
+    ];
+
+    const resultadosDiv = document.getElementById("resultados");
+    resultadosDiv.innerHTML = "";
+
+    disciplinas.forEach(disciplina => {
+        const media = calcularMedia(disciplina.nota1, disciplina.nota2, disciplina.recuperacao);
+        resultadosDiv.innerHTML += `<p>${disciplina.nome}: Média = ${media.toFixed(2)}</p>`;
+    });
+}
+    </script>
+</body>
+</html>
