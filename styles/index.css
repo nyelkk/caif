@@ -5,67 +5,99 @@
     padding: 0;
     box-sizing: border-box;
 }
-:root {
-    --roxo: #6F3DBD;
-    --branco: rgb(252, 252, 252);
-}
 body{
-    font-family: 'Montserrat', sans-serif;
-
+    height: 100vh;
 }
 header{
-    display: flex;
-    padding: 10px;
     width: 100%;
-}
-nav{
+    height: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
 }
-nav img{
-    width: 6%;
-    transition: 0.7s;
+header img{
+    width: 10vw;
 }
 main{
+    width: 100%;
+    height: 80%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url(../images/back.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    padding: 4%;
 }
-main .main-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.411);
-    border-radius: 10px;
-    padding: 20px;
-    width: 25%;
-    height: 55%;
+main .aside{
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 main .main-container h1{
-    font-family: "Poppins", sans-serif;
-    color: var(--branco);
+    font-size: 3rem;
+    color: rgb(56, 28, 82);
 }
-main .main-container form{
+main .main-container h3{
+    font-size: 1em;
+    font-weight: 400;
+    opacity: .7;
+    margin-bottom: 5%;
+}
+main .main-container{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-main .main-container form label{
-    color: var(--branco);
+    margin-left: 5vw;
 }
 main .main-container form input{
-    width: 100%;
+    width: 120%;
+    height: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.39);
+    border-radius: 10px;
+    padding-left: 4%;
+}
+main .main-container form input[type = submit]{
+    background-color: purple;
+    color: rgb(255, 252, 245);
+    transition: .7s;
+}
+main .main-container form input[type = submit]:hover{
+    opacity: .7;
+    cursor: pointer;
+}
+main .main-container form label{
+    font-weight: 500;
+}
+main .main-container form input::placeholder{
+    opacity: .7;
+}
+main .main-container form input:focus{
+    outline: none;
+    border: 1px solid purple;
+    transition: 1s;
+}
+main .main-container .sigaa{
+    width: 120%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+main .main-container .sigaa img{
+    width: 200px;
+    margin-top: 2vh;
+    transition: .5s;
+}
+main .main-container .sigaa img:hover{
+    cursor: pointer;
+    opacity: .7;
+    transform: translateY(-1px);
+}
+main .aside{
+    width: 40vw;
+}
+main .other-side{
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main .other-side img{
+    width: 80%;
 }
